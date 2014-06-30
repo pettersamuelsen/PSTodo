@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="5056" systemVersion="14A261i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="PSEntryCellIdentifier" id="KGk-i7-Jjw" customClass="PSEntryTableViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label appearanceType="aqua" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a71-H0-MVG" userLabel="Title Label - Label">
+                        <rect key="frame" x="20" y="11" width="280" height="21"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <attributedString key="attributedText">
+                            <fragment content="Label">
+                                <attributes>
+                                    <color key="NSColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    <font key="NSFont" size="17" name="HelveticaNeue"/>
+                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                </attributes>
+                            </fragment>
+                        </attributedString>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView appearanceType="aqua" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="J3K-Nf-18y" userLabel="Seperator Image View">
+                        <rect key="frame" x="0.0" y="42" width="320" height="1"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="1" id="C8P-vk-btE"/>
+                        </constraints>
+                    </imageView>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="a71-H0-MVG" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="EgZ-nR-7s3"/>
+                    <constraint firstAttribute="bottom" secondItem="a71-H0-MVG" secondAttribute="bottom" constant="11" id="JKb-kB-cVh"/>
+                    <constraint firstAttribute="bottom" secondItem="J3K-Nf-18y" secondAttribute="bottom" id="R6s-4a-5qc"/>
+                    <constraint firstAttribute="trailing" secondItem="J3K-Nf-18y" secondAttribute="trailing" id="WDd-fb-uXh"/>
+                    <constraint firstItem="J3K-Nf-18y" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="cSY-JE-9Dq"/>
+                    <constraint firstAttribute="trailing" secondItem="a71-H0-MVG" secondAttribute="trailing" constant="20" id="fb6-Xv-OyJ"/>
+                    <constraint firstItem="a71-H0-MVG" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="11" id="heg-jm-FCy"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="seperatorImageView" destination="J3K-Nf-18y" id="uAw-S5-ZMw"/>
+                <outlet property="titleLabel" destination="a71-H0-MVG" id="9oF-UQ-kl8"/>
+            </connections>
+        </tableViewCell>
+    </objects>
+</document>
