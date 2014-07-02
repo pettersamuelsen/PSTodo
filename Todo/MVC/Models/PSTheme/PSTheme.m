@@ -43,7 +43,7 @@ typedef enum {
   return [UIColor colorWithRed:29.0f/255.0f green:29.0f/255.0f blue:38.0f/255.0f alpha:1.0f];
 }
 
-+ (UIColor *)colorSecondaryLigten {
++ (UIColor *)colorSecondaryLighten {
   return [UIColor colorWithRed:43.0f/255.0f green:43.0f/255.0f blue:56.0f/255.0f alpha:1.0f];
 }
 
@@ -92,6 +92,20 @@ typedef enum {
       return [self fontRegular];
       break;
   }
+}
+
+#pragma mark - Strike Through
++ (void)applyStrikeThroughStyle:(BOOL)applyStrikeThrough toLabel:(UILabel *)label {
+  NSDictionary *attributes = nil;
+  
+  // Only apply the strike through applyStrikeThrough is set to yes, otherwise override it
+  if(applyStrikeThrough){
+    attributes = @{NSStrikethroughStyleAttributeName: [NSNumber numberWithInt:NSUnderlineStyleSingle]};
+  }
+  
+  NSAttributedString *attributedTitleString = [[NSAttributedString alloc] initWithString:label.text
+                                                                              attributes:attributes];
+  label.attributedText = attributedTitleString;
 }
 
 #pragma mark - Apply Theme

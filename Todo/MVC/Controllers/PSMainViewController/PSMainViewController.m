@@ -116,7 +116,7 @@ static NSString *entryCellIdentifier = @"PSEntryCellIdentifier";
 }
 
 - (NSArray *)sortDescriptors {
-  return @[[NSSortDescriptor sortDescriptorWithKey:@"completed" ascending:NO],
+  return @[[NSSortDescriptor sortDescriptorWithKey:@"completed" ascending:YES],
            [NSSortDescriptor sortDescriptorWithKey:@"createdAt" ascending:YES]];
 }
 

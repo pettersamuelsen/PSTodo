@@ -23,7 +23,6 @@
   [super viewDidLoad];
   
   [self setupView];
-  [self.titleTextField becomeFirstResponder];
 }
 
 #pragma mark - Setup
@@ -51,6 +50,9 @@
   self.submitButton.layer.cornerRadius = [PSTheme defaultCornerRadius];
   [self.submitButton setTitleColor:[PSTheme colorWhite] forState:UIControlStateNormal];
   [self.submitButton setTitle:NSLocalizedString(@"Submit", nil) forState:UIControlStateNormal];
+  
+  // Make the textfield the first responder
+  [self.titleTextField becomeFirstResponder];
 }
 
 #pragma mark - Actions
@@ -127,9 +129,7 @@
   // Animate in the dimmed background image view
   [UIView animateWithDuration:kDefaultAnimationDurationFast animations:^{
     self.dimmedBackgroundImageView.alpha = dimmedBackgroundAlphaEnd;
-  } completion:^(BOOL finished) {
-    
-  }];
+  } completion:nil];
   
   // Animate in the alert container view
   // Set the start frame of the alert container view

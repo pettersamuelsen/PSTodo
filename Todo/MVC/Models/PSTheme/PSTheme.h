@@ -34,7 +34,7 @@
  *
  *  @return A UIColor representation of the ligtened secondary color.
  */
-+ (UIColor *)colorSecondaryLigten;
++ (UIColor *)colorSecondaryLighten;
 
 /**
  *  A darker version of the secondary color. This color is used to back up the secondary color.
@@ -84,5 +84,13 @@
  *  @return A UIFont representation of the todo's title font
  */
 + (UIFont *)todoTitleFont;
+
+/**
+ *  Applies a strike through style to the given label
+ *
+ *  @param applyStrikeThroughStyle Wether or not to apply the strike through
+ *  @param label                   The label to apply the style
+ */
++ (void)applyStrikeThroughStyle:(BOOL)applyStrikeThrough toLabel:(UILabel *)label;
 
 @end

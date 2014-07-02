@@ -34,7 +34,7 @@
 - (void)setupView {
   // Set styles
   self.titleLabel.font = [PSTheme todoTitleFont];
-  self.seperatorImageView.backgroundColor = [PSTheme colorSecondaryLigten];
+  self.seperatorImageView.backgroundColor = [PSTheme colorSecondaryLighten];
   self.contentView.backgroundColor = [PSTheme colorSecondary];
 }
 
@@ -55,16 +55,11 @@
 
 #pragma mark - Helpers
 - (void)updateTitleLabelWithTitle:(NSString *)title isCompleted:(BOOL)isCompleted {
-  NSDictionary *attributes;
+  self.titleLabel.text = title;
+  self.titleLabel.textColor = isCompleted ? [PSTheme colorSecondaryLighten] : [PSTheme colorWhite];
   
-  // Only apply the strike through if the task is completed
-  if(isCompleted){
-    attributes = @{NSStrikethroughStyleAttributeName: [NSNumber numberWithInt:NSUnderlineStyleSingle]};
-  }
-  
-  NSAttributedString *attributedTitleString = [[NSAttributedString alloc] initWithString:title attributes:attributes];
-  self.titleLabel.attributedText = attributedTitleString;
-  self.titleLabel.textColor = isCompleted ? [PSTheme colorSecondaryLigten] : [PSTheme colorWhite];
+  // Apply the strike through if the task is completed
+  [PSTheme applyStrikeThroughStyle:isCompleted toLabel:self.titleLabel];
 }
 
 @end
