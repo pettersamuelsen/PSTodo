@@ -7,26 +7,39 @@
 //
 
 #import "PSEntry+CoreDataAdditions.h"
+#import "PSCoreDataManager.h"
 
 @implementation PSEntry (CoreDataAdditions)
 
 #pragma mark - Class Methods
-+ (PSEntry *)createInManagedObjectContext:(NSManagedObjectContext *)managedObjectContext {
-  NSEntityDescription *entityDescription = [NSEntityDescription entityForName:NSStringFromClass([self class])
-                                                       inManagedObjectContext:managedObjectContext];
-  
-  return (PSEntry *)[[NSManagedObject alloc] initWithEntity:entityDescription
-                             insertIntoManagedObjectContext:managedObjectContext];
++ (PSEntry *)createWithTitle:(NSString *)title {
+    NSEntityDescription *entityDescription = [NSEntityDescription entityForName:NSStringFromClass([self class])
+                                                         inManagedObjectContext:[self managedObjectContext]];
+    
+    PSEntry *entry = [[[self class] alloc] initWithEntity:entityDescription
+                           insertIntoManagedObjectContext:[self managedObjectContext]];
+    entry.title = title;
+    entry.createdAt = [NSDate date];
+    entry.completed = @(NO);
+    [entry save];
+    
+    return entry;
 }
 
 #pragma mark - Instance Methods
 - (BOOL)save {
-  return [[self managedObjectContext] save:nil];
+    return [[self managedObjectContext] save:nil];
 }
 
-- (void)toggleCompleted {
-  self.completed = [NSNumber numberWithBool:!self.completed.boolValue];
-  [self save];
+- (BOOL)toggleCompleted {
+    self.completed = [NSNumber numberWithBool:!self.completed.boolValue];
+    return [self save];
+}
+
+#pragma mark - Private Methods
+#pragma mark - Helpers
++ (NSManagedObjectContext *)managedObjectContext {
+    return [PSCoreDataManager sharedManager].managedObjectContext;
 }
 
 @end

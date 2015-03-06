@@ -96,6 +96,10 @@ typedef enum {
 
 #pragma mark - Strike Through
 + (void)applyStrikeThroughStyle:(BOOL)applyStrikeThrough toLabel:(UILabel *)label {
+  if (!label.text) {
+    return;
+  }
+    
   NSDictionary *attributes = nil;
   
   // Only apply the strike through applyStrikeThrough is set to yes, otherwise override it

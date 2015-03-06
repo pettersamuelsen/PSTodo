@@ -6,8 +6,7 @@
 //  Copyright (c) 2014 Petter Samuelsen. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
-
+@import UIKit;
 #import "PSAppDelegate.h"
 
 int main(int argc, char * argv[])

@@ -79,10 +79,7 @@
 
 #pragma mark - Create Entry
 - (void)createEntryWithTitle:(NSString *)title {
-//  PSEntry *entry = [PSEntry createInManagedObjectContext:[self managedObjectContext]];
-//  entry.title = title;
-//  entry.createdAt = [NSDate date];
-//  [entry save];
+    [PSEntry createWithTitle:title];
 }
 
 #pragma mark - PSCreateViewControllerDelegate
