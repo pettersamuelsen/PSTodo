@@ -1,32 +1,31 @@
 //
-//  PSMainViewController.m
+//  PSEntriesViewController.m
 //  Todo
 //
 //  Created by Petter Samuelsen on 6/26/14.
 //  Copyright (c) 2014 Petter Samuelsen. All rights reserved.
 //
 
-#import "PSMainViewController.h"
-#import "PSEntry.h"
+#import "PSEntriesViewController.h"
 #import "PSEntry+CoreDataAdditions.h"
 #import "PSEntryTableViewCell.h"
 #import "PSCoreDataManager.h"
 #import "PSCreateViewController.h"
 #import "PSTransitionAnimator.h"
 #import "PSTheme.h"
+#import "PSEntriesTableViewDataSource.h"
 
-static NSString *entryCellIdentifier = @"PSEntryCellIdentifier";
-
-@interface PSMainViewController () <UIViewControllerTransitioningDelegate, PSCreateViewControllerDelegate>
-
+@interface PSEntriesViewController () <UIViewControllerTransitioningDelegate, PSCreateViewControllerDelegate>
+@property (nonatomic, strong) PSEntriesTableViewDataSource *entriesTableViewDataSource;
 @end
 
-@implementation PSMainViewController
+@implementation PSEntriesViewController
 
 - (void)viewDidLoad {
   [super viewDidLoad];
   
   [self setupView];
+  [self setupDataSource];
   [self registerTableViewCells];
 }
 
@@ -43,25 +42,16 @@ static NSString *entryCellIdentifier = @"PSEntryCellIdentifier";
   self.view.backgroundColor = [PSTheme colorSecondary];
 }
 
+- (void)setupDataSource {
+    self.entriesTableViewDataSource = [[PSEntriesTableViewDataSource alloc] initWithFetchedResultsController:self.fetchedResultsController
+                                                                                              cellIdentifier:PSEntryTableViewCellIdentifier];
+    self.tableView.dataSource = self.entriesTableViewDataSource;
+}
+
 - (void)registerTableViewCells {
   // Register the todo cell
   UINib *todoCellNib = [UINib nibWithNibName:NSStringFromClass([PSEntryTableViewCell class]) bundle:nil];
-  [self.tableView registerNib:todoCellNib forCellReuseIdentifier:entryCellIdentifier];
-}
-
-#pragma mark - UITableViewDataSource
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-  return [PSTheme defaultCellHeight];
-}
-
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-  PSEntry *entry = [self.fetchedResultsController objectAtIndexPath:indexPath];
-  PSEntryTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:entryCellIdentifier];
-  
-  cell.title = entry.title;
-  cell.completed = entry.completed.boolValue;
-  
-  return cell;
+  [self.tableView registerNib:todoCellNib forCellReuseIdentifier:PSEntryTableViewCellIdentifier];
 }
 
 #pragma mark - UITableViewDelegate
@@ -71,6 +61,10 @@ static NSString *entryCellIdentifier = @"PSEntryCellIdentifier";
   // A cell was tapped, so toggle the completion of the entry
   PSEntry *entry = [self.fetchedResultsController objectAtIndexPath:indexPath];
   [entry toggleCompleted];
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return [PSTheme defaultCellHeight];
 }
 
 #pragma mark - Actions
@@ -85,10 +79,10 @@ static NSString *entryCellIdentifier = @"PSEntryCellIdentifier";
 
 #pragma mark - Create Entry
 - (void)createEntryWithTitle:(NSString *)title {
-  PSEntry *entry = [PSEntry createInManagedObjectContext:[self managedObjectContext]];
-  entry.title = title;
-  entry.createdAt = [NSDate date];
-  [entry save];
+//  PSEntry *entry = [PSEntry createInManagedObjectContext:[self managedObjectContext]];
+//  entry.title = title;
+//  entry.createdAt = [NSDate date];
+//  [entry save];
 }
 
 #pragma mark - PSCreateViewControllerDelegate

@@ -9,6 +9,8 @@
 #import "PSEntryTableViewCell.h"
 #import "PSTheme.h"
 
+NSString *PSEntryTableViewCellIdentifier = @"PSEntryTableViewCellIdentifier";
+
 @interface PSEntryTableViewCell()
 @property (nonatomic, weak) IBOutlet UILabel *titleLabel;
 @property (nonatomic, weak) IBOutlet UIImageView *seperatorImageView;

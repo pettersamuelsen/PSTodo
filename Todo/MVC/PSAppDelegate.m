@@ -7,7 +7,7 @@
 //
 
 #import "PSAppDelegate.h"
-#import "PSMainViewController.h"
+#import "PSEntriesViewController.h"
 #import "PSCoreDataManager.h"
 #import "PSTheme.h"
 #import "PSMainNavigationController.h"
@@ -18,7 +18,7 @@
   self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
 
   // Setup the initial view controller
-  PSMainViewController *mainViewController = [[PSMainViewController alloc] init];
+  PSEntriesViewController *mainViewController = [[PSEntriesViewController alloc] init];
   PSMainNavigationController *navigationController = [[PSMainNavigationController alloc] initWithRootViewController:mainViewController];
   
   // Apply the theme

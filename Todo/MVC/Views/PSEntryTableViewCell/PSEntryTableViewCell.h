@@ -8,6 +8,8 @@
 
 @import UIKit;
 
+extern NSString *PSEntryTableViewCellIdentifier;
+
 @interface PSEntryTableViewCell : UITableViewCell
 
 /**

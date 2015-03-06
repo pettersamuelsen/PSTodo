@@ -1,5 +1,5 @@
 //
-//  PSMainViewController.h
+//  PSEntriesViewController.h
 //  Todo
 //
 //  Created by Petter Samuelsen on 6/26/14.
@@ -8,6 +8,6 @@
 
 #import "PSManagedTableViewController.h"
 
-@interface PSMainViewController : PSManagedTableViewController
+@interface PSEntriesViewController : PSManagedTableViewController
 
 @end

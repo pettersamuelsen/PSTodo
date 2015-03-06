@@ -20,13 +20,6 @@
 + (PSEntry *)createInManagedObjectContext:(NSManagedObjectContext *)managedObjectContext;
 
 /**
- *  Saves the PSEntry in it's respective managed object context
- *
- *  @return Returns a BOOL wether the save was successful or not
- */
-- (BOOL)save;
-
-/**
  *  Toggles the current state of the PSEntry's 'completed' value
  */
 - (void)toggleCompleted;
