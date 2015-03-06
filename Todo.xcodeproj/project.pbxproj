@@ -32,6 +32,7 @@
 		DD4166CF1AAA15B8001E3F39 /* PSEntriesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DD4166CD1AAA15B8001E3F39 /* PSEntriesViewController.m */; };
 		DD4166D01AAA15B8001E3F39 /* PSEntriesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DD4166CE1AAA15B8001E3F39 /* PSEntriesViewController.xib */; };
 		DD4166D31AAA15CD001E3F39 /* PSEntriesTableViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = DD4166D21AAA15CD001E3F39 /* PSEntriesTableViewDataSource.m */; };
+		DD4166D71AAA1C71001E3F39 /* PSEntriesFetchedResultsControllerDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DD4166D61AAA1C71001E3F39 /* PSEntriesFetchedResultsControllerDelegate.m */; };
 		DD4218ED1960D48F00EE9059 /* PSTheme.m in Sources */ = {isa = PBXBuildFile; fileRef = DD4218EC1960D48F00EE9059 /* PSTheme.m */; };
 		DD4218FB1960DB5300EE9059 /* OpenSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DD4218F81960DB5300EE9059 /* OpenSans-Bold.ttf */; };
 		DD4218FC1960DB5300EE9059 /* OpenSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DD4218F91960DB5300EE9059 /* OpenSans-Regular.ttf */; };
@@ -90,6 +91,8 @@
 		DD4166CE1AAA15B8001E3F39 /* PSEntriesViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PSEntriesViewController.xib; path = PSEntriesViewController/PSEntriesViewController.xib; sourceTree = "<group>"; };
 		DD4166D11AAA15CD001E3F39 /* PSEntriesTableViewDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PSEntriesTableViewDataSource.h; path = PSEntriesViewController/PSEntriesTableViewDataSource/PSEntriesTableViewDataSource.h; sourceTree = "<group>"; };
 		DD4166D21AAA15CD001E3F39 /* PSEntriesTableViewDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PSEntriesTableViewDataSource.m; path = PSEntriesViewController/PSEntriesTableViewDataSource/PSEntriesTableViewDataSource.m; sourceTree = "<group>"; };
+		DD4166D51AAA1C71001E3F39 /* PSEntriesFetchedResultsControllerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PSEntriesFetchedResultsControllerDelegate.h; path = PSEntriesViewController/PSEntriesFetchedResultsControllerDelegate/PSEntriesFetchedResultsControllerDelegate.h; sourceTree = "<group>"; };
+		DD4166D61AAA1C71001E3F39 /* PSEntriesFetchedResultsControllerDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PSEntriesFetchedResultsControllerDelegate.m; path = PSEntriesViewController/PSEntriesFetchedResultsControllerDelegate/PSEntriesFetchedResultsControllerDelegate.m; sourceTree = "<group>"; };
 		DD4218EB1960D48F00EE9059 /* PSTheme.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PSTheme.h; path = PSTheme/PSTheme.h; sourceTree = "<group>"; };
 		DD4218EC1960D48F00EE9059 /* PSTheme.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PSTheme.m; path = PSTheme/PSTheme.m; sourceTree = "<group>"; };
 		DD4218F81960DB5300EE9059 /* OpenSans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Bold.ttf"; sourceTree = "<group>"; };
@@ -256,6 +259,7 @@
 				DD4166CC1AAA15B8001E3F39 /* PSEntriesViewController.h */,
 				DD4166CD1AAA15B8001E3F39 /* PSEntriesViewController.m */,
 				DD4166CE1AAA15B8001E3F39 /* PSEntriesViewController.xib */,
+				DD4166D41AAA1C47001E3F39 /* PSEntriesFetchedResultsControllerDelegate */,
 				DD4166CB1AAA14CF001E3F39 /* PSEntriesTableViewDataSource */,
 			);
 			name = PSEntriesViewController;
@@ -332,6 +336,15 @@
 				DD4166D21AAA15CD001E3F39 /* PSEntriesTableViewDataSource.m */,
 			);
 			name = PSEntriesTableViewDataSource;
+			sourceTree = "<group>";
+		};
+		DD4166D41AAA1C47001E3F39 /* PSEntriesFetchedResultsControllerDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				DD4166D51AAA1C71001E3F39 /* PSEntriesFetchedResultsControllerDelegate.h */,
+				DD4166D61AAA1C71001E3F39 /* PSEntriesFetchedResultsControllerDelegate.m */,
+			);
+			name = PSEntriesFetchedResultsControllerDelegate;
 			sourceTree = "<group>";
 		};
 		DD4218EA1960D48100EE9059 /* PSTheme */ = {
@@ -522,6 +535,7 @@
 				540C0BAE195CB3DB009A503D /* PSEntry+CoreDataAdditions.m in Sources */,
 				DD4219011960DC8F00EE9059 /* PSMainNavigationController.m in Sources */,
 				546AD6381961A885009C1254 /* PSCreateViewController.m in Sources */,
+				DD4166D71AAA1C71001E3F39 /* PSEntriesFetchedResultsControllerDelegate.m in Sources */,
 				DD80EB92196098EE0057869F /* PSEntryTableViewCell.m in Sources */,
 				DD4166D31AAA15CD001E3F39 /* PSEntriesTableViewDataSource.m in Sources */,
 				540C0B9B195C72ED009A503D /* PSCoreDataManager.m in Sources */,

@@ -14,9 +14,11 @@
 #import "PSTransitionAnimator.h"
 #import "PSTheme.h"
 #import "PSEntriesTableViewDataSource.h"
+#import "PSEntriesFetchedResultsControllerDelegate.h"
 
 @interface PSEntriesViewController () <UIViewControllerTransitioningDelegate, PSCreateViewControllerDelegate>
 @property (nonatomic, strong) PSEntriesTableViewDataSource *entriesTableViewDataSource;
+@property (nonatomic, strong) PSEntriesFetchedResultsControllerDelegate *entriesFetchedResultsControllerDelegate;
 @end
 
 @implementation PSEntriesViewController
@@ -43,9 +45,14 @@
 }
 
 - (void)setupDataSource {
+    // Entries tableview data source
     self.entriesTableViewDataSource = [[PSEntriesTableViewDataSource alloc] initWithFetchedResultsController:self.fetchedResultsController
                                                                                               cellIdentifier:PSEntryTableViewCellIdentifier];
     self.tableView.dataSource = self.entriesTableViewDataSource;
+    
+    // NSFetchedResultsController delegate
+    self.entriesFetchedResultsControllerDelegate = [[PSEntriesFetchedResultsControllerDelegate alloc] initWithTableView:self.tableView];
+    self.fetchedResultsController.delegate = self.entriesFetchedResultsControllerDelegate;
 }
 
 - (void)registerTableViewCells {
