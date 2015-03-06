@@ -137,6 +137,9 @@
       [self.tableView deleteSections:[NSIndexSet indexSetWithIndex:sectionIndex]
                     withRowAnimation:[self tableViewRowAnimation]];
       break;
+          
+    default:
+      break;
   }
 }
 

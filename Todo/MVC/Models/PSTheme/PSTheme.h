@@ -6,7 +6,7 @@
 //  Copyright (c) 2014 Petter Samuelsen. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+@import Foundation;
 
 @interface PSTheme : NSObject
 

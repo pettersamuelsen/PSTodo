@@ -21,7 +21,6 @@
 
 - (void)viewDidLoad {
   [super viewDidLoad];
-  
   [self setupView];
 }
 
@@ -108,15 +107,14 @@
       dimmedBackgroundAlphaStart = 0.0f;
       dimmedBackgroundAlphaEnd = [PSTheme dimmedBackgroundAlpha];
       alertContainerViewFrameStart.origin.y = -alertContainerViewFrameStart.size.height;
-      springValue = kDefaultAnimationSpringValue;
+      springValue = PSDefaultAnimationSpringValue;
       break;
       
     case PSAnimationDirectionOut:
       dimmedBackgroundAlphaStart = [PSTheme dimmedBackgroundAlpha];
       dimmedBackgroundAlphaEnd = 0.0f;
       alertContainerViewFrameEnd.origin.y = -alertContainerViewFrameEnd.size.height;
-      springValue = kDefaultAnimationSpringValueNone;
-      
+      springValue = PSDefaultAnimationSpringValueNone;
       break;
       
     default:
@@ -127,7 +125,7 @@
   self.dimmedBackgroundImageView.alpha = dimmedBackgroundAlphaStart;
   
   // Animate in the dimmed background image view
-  [UIView animateWithDuration:kDefaultAnimationDurationFast animations:^{
+  [UIView animateWithDuration:PSDefaultAnimationDurationFast animations:^{
     self.dimmedBackgroundImageView.alpha = dimmedBackgroundAlphaEnd;
   } completion:nil];
   

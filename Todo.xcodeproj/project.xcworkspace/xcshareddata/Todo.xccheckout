@@ -10,29 +10,29 @@
 	<string>Todo</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>AFA2C4D0-7068-40A9-8DE7-BD40ACAC6374</key>
-		<string>ssh://github-petter/pettersamuelsen/PSTodo.git</string>
+		<key>8226F29351587EE7C7B6A3782C4449FC905D71A0</key>
+		<string>https://github.com/pettersamuelsen/PSTodo.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>Todo.xcodeproj/project.xcworkspace</string>
+	<string>Todo.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>AFA2C4D0-7068-40A9-8DE7-BD40ACAC6374</key>
+		<key>8226F29351587EE7C7B6A3782C4449FC905D71A0</key>
 		<string>../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>ssh://github-petter/pettersamuelsen/PSTodo.git</string>
+	<string>https://github.com/pettersamuelsen/PSTodo.git</string>
 	<key>IDESourceControlProjectVersion</key>
-	<integer>110</integer>
+	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>AFA2C4D0-7068-40A9-8DE7-BD40ACAC6374</string>
+	<string>8226F29351587EE7C7B6A3782C4449FC905D71A0</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>AFA2C4D0-7068-40A9-8DE7-BD40ACAC6374</string>
+			<string>8226F29351587EE7C7B6A3782C4449FC905D71A0</string>
 			<key>IDESourceControlWCCName</key>
 			<string>PSTodo</string>
 		</dict>

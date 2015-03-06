@@ -6,13 +6,13 @@
 //  Copyright (c) 2014 Petter Samuelsen. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+@import Foundation;
 
 @interface PSTransitionAnimator : NSObject <UIViewControllerAnimatedTransitioning>
 
 /**
- *  Wether to perform the animation in reverse or not
+ *  Whether the view contorller is presenting or not
  */
-@property (nonatomic, assign) BOOL reverse;
+@property (nonatomic, assign, getter=isPresenting) BOOL presenting;
 
 @end

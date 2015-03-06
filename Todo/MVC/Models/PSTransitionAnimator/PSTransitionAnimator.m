@@ -12,7 +12,7 @@
 @implementation PSTransitionAnimator
 
 - (NSTimeInterval)transitionDuration:(id<UIViewControllerContextTransitioning>)transitionContext {
-  return kDefaultAnimationDuration;
+  return PSDefaultAnimationDuration;
 }
 
 - (void)animateTransition:(id <UIViewControllerContextTransitioning>)transitionContext {
@@ -26,7 +26,7 @@
   
   NSTimeInterval duration = [self transitionDuration:transitionContext];
   
-  if(self.reverse){
+  if(self.isPresenting){
     [inView addSubview:toView];
     toView.userInteractionEnabled = YES;
     

@@ -8,7 +8,6 @@
 
 #import "PSEntry.h"
 
-
 @implementation PSEntry
 
 @dynamic createdAt;

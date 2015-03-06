@@ -6,13 +6,13 @@
 //  Copyright (c) 2014 Petter Samuelsen. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+@import Foundation;
 
 // Core Data
-static NSString * const kCoreDataModelName  = @"PSTodo";
+static NSString * const PSCoreDataModelName  = @"PSTodo";
 
 // Animation
-static NSTimeInterval const kDefaultAnimationDuration = 0.5f;
-static NSTimeInterval const kDefaultAnimationDurationFast = 0.23f;
-static CGFloat const kDefaultAnimationSpringValue = 0.5f;
-static CGFloat const kDefaultAnimationSpringValueNone = 1.0f;
+static NSTimeInterval const PSDefaultAnimationDuration = 0.5f;
+static NSTimeInterval const PSDefaultAnimationDurationFast = 0.23f;
+static CGFloat const PSDefaultAnimationSpringValue = 0.5f;
+static CGFloat const PSDefaultAnimationSpringValueNone = 1.0f;

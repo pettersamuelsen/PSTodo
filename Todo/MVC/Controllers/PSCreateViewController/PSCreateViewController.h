@@ -6,12 +6,12 @@
 //  Copyright (c) 2014 Petter Samuelsen. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+@import UIKit;
 
-typedef enum {
-  PSAnimationDirectionIn = 0,
-  PSAnimationDirectionOut
-} PSAnimationDirection;
+typedef NS_ENUM(NSUInteger, PSAnimationDirection) {
+    PSAnimationDirectionIn = 0,
+    PSAnimationDirectionOut
+};
 
 @class PSCreateViewController;
 

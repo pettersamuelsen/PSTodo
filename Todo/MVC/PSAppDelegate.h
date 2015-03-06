@@ -6,10 +6,8 @@
 //  Copyright (c) 2014 Petter Samuelsen. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+@import UIKit;
 
 @interface PSAppDelegate : UIResponder <UIApplicationDelegate>
-
 @property (nonatomic, strong) UIWindow *window;
-
 @end

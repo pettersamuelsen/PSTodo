@@ -101,7 +101,7 @@ static NSString *entryCellIdentifier = @"PSEntryCellIdentifier";
                                                                   presentingController:(UIViewController *)presenting
                                                                       sourceController:(UIViewController *)source {
   PSTransitionAnimator *transitionAnimator = [[PSTransitionAnimator alloc] init];
-  transitionAnimator.reverse = YES;
+  transitionAnimator.presenting = YES;
   return transitionAnimator;
 }
 
