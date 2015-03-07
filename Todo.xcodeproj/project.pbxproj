@@ -39,6 +39,7 @@
 		DD4218FD1960DB5300EE9059 /* OpenSans-Semibold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DD4218FA1960DB5300EE9059 /* OpenSans-Semibold.ttf */; };
 		DD4219011960DC8F00EE9059 /* PSMainNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = DD4219001960DC8F00EE9059 /* PSMainNavigationController.m */; };
 		DD7776211AAB322C0045A8BB /* UITextField+Validation.m in Sources */ = {isa = PBXBuildFile; fileRef = DD7776201AAB322C0045A8BB /* UITextField+Validation.m */; };
+		DD7776241AAB39AD0045A8BB /* PSTransitionDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DD7776231AAB39AD0045A8BB /* PSTransitionDelegate.m */; };
 		DD80EB92196098EE0057869F /* PSEntryTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DD80EB90196098EE0057869F /* PSEntryTableViewCell.m */; };
 		DD80EB93196098EE0057869F /* PSEntryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DD80EB91196098EE0057869F /* PSEntryTableViewCell.xib */; };
 /* End PBXBuildFile section */
@@ -104,6 +105,8 @@
 		DD77761B1AAB31400045A8BB /* PSTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PSTransition.h; path = PSTransitionAnimator/PSTransition.h; sourceTree = "<group>"; };
 		DD77761F1AAB322C0045A8BB /* UITextField+Validation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UITextField+Validation.h"; path = "UITextField+Validation/UITextField+Validation.h"; sourceTree = "<group>"; };
 		DD7776201AAB322C0045A8BB /* UITextField+Validation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UITextField+Validation.m"; path = "UITextField+Validation/UITextField+Validation.m"; sourceTree = "<group>"; };
+		DD7776221AAB39AD0045A8BB /* PSTransitionDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PSTransitionDelegate.h; path = PSTransitionAnimator/PSTransitionDelegate.h; sourceTree = "<group>"; };
+		DD7776231AAB39AD0045A8BB /* PSTransitionDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PSTransitionDelegate.m; path = PSTransitionAnimator/PSTransitionDelegate.m; sourceTree = "<group>"; };
 		DD80EB8F196098EE0057869F /* PSEntryTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PSEntryTableViewCell.h; path = Views/PSEntryTableViewCell/PSEntryTableViewCell.h; sourceTree = "<group>"; };
 		DD80EB90196098EE0057869F /* PSEntryTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PSEntryTableViewCell.m; path = Views/PSEntryTableViewCell/PSEntryTableViewCell.m; sourceTree = "<group>"; };
 		DD80EB91196098EE0057869F /* PSEntryTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PSEntryTableViewCell.xib; path = Views/PSEntryTableViewCell/PSEntryTableViewCell.xib; sourceTree = "<group>"; };
@@ -323,6 +326,8 @@
 				DD77761B1AAB31400045A8BB /* PSTransition.h */,
 				546AD63B1961AA04009C1254 /* PSTransitionAnimator.h */,
 				546AD63C1961AA04009C1254 /* PSTransitionAnimator.m */,
+				DD7776221AAB39AD0045A8BB /* PSTransitionDelegate.h */,
+				DD7776231AAB39AD0045A8BB /* PSTransitionDelegate.m */,
 			);
 			name = PSTransitionAnimator;
 			sourceTree = "<group>";
@@ -545,6 +550,7 @@
 				540C0BA7195CAE24009A503D /* PSEntry.m in Sources */,
 				DD4166CF1AAA15B8001E3F39 /* PSEntriesViewController.m in Sources */,
 				540C0B50195C6D9D009A503D /* PSAppDelegate.m in Sources */,
+				DD7776241AAB39AD0045A8BB /* PSTransitionDelegate.m in Sources */,
 				DD4218ED1960D48F00EE9059 /* PSTheme.m in Sources */,
 				540C0BA4195CADCE009A503D /* PSTodo.xcdatamodeld in Sources */,
 				546AD63D1961AA04009C1254 /* PSTransitionAnimator.m in Sources */,

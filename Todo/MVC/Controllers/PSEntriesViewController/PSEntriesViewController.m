@@ -11,14 +11,15 @@
 #import "PSEntryTableViewCell.h"
 #import "PSCoreDataManager.h"
 #import "PSCreateViewController.h"
-#import "PSTransitionAnimator.h"
 #import "PSTheme.h"
 #import "PSEntriesTableViewDataSource.h"
 #import "PSEntriesFetchedResultsControllerDelegate.h"
+#import "PSTransitionDelegate.h"
 
 @interface PSEntriesViewController () <UIViewControllerTransitioningDelegate, PSCreateViewControllerDelegate>
 @property (nonatomic, strong) PSEntriesTableViewDataSource *entriesTableViewDataSource;
 @property (nonatomic, strong) PSEntriesFetchedResultsControllerDelegate *entriesFetchedResultsControllerDelegate;
+@property (nonatomic, strong) PSTransitionDelegate *transitionDelegate;
 @end
 
 @implementation PSEntriesViewController
@@ -28,6 +29,7 @@
   
   [self setupView];
   [self setupDataSource];
+  [self setupDelegate];
   [self registerTableViewCells];
 }
 
@@ -49,10 +51,15 @@
     self.entriesTableViewDataSource = [[PSEntriesTableViewDataSource alloc] initWithFetchedResultsController:self.fetchedResultsController
                                                                                               cellIdentifier:PSEntryTableViewCellIdentifier];
     self.tableView.dataSource = self.entriesTableViewDataSource;
-    
+}
+
+- (void)setupDelegate {
     // NSFetchedResultsController delegate
     self.entriesFetchedResultsControllerDelegate = [[PSEntriesFetchedResultsControllerDelegate alloc] initWithTableView:self.tableView];
     self.fetchedResultsController.delegate = self.entriesFetchedResultsControllerDelegate;
+    
+    // Transition delegate
+    self.transitionDelegate = [[PSTransitionDelegate alloc] init];
 }
 
 - (void)registerTableViewCells {
@@ -77,35 +84,20 @@
 #pragma mark - Actions
 - (void)addButtonPressed:(id)sender {
   PSCreateViewController *createViewController = [[PSCreateViewController alloc] init];
-  createViewController.transitioningDelegate = self;
+  createViewController.transitioningDelegate = self.transitioningDelegate;
   createViewController.modalPresentationStyle = UIModalPresentationCustom;
   createViewController.delegate = self;
-  
   [self presentViewController:createViewController animated:YES completion:nil];
 }
 
 #pragma mark - Create Entry
 - (void)createEntryWithTitle:(NSString *)title {
-    [PSEntry createWithTitle:title];
+  [PSEntry createWithTitle:title];
 }
 
 #pragma mark - PSCreateViewControllerDelegate
 - (void)psCreateViewController:(PSCreateViewController *)viewController didSubmitWithTitle:(NSString *)title {
   [self createEntryWithTitle:title];
-}
-
-#pragma mark - UIViewControllerTransitioningDelegate
-- (id<UIViewControllerAnimatedTransitioning>)animationControllerForPresentedController:(UIViewController *)presented
-                                                                  presentingController:(UIViewController *)presenting
-                                                                      sourceController:(UIViewController *)source {
-  PSTransitionAnimator *transitionAnimator = [[PSTransitionAnimator alloc] init];
-  transitionAnimator.presenting = YES;
-  return transitionAnimator;
-}
-
-- (id<UIViewControllerAnimatedTransitioning>)animationControllerForDismissedController:(UIViewController *)dismissed {
-  PSTransitionAnimator * transitionAnimator = [[PSTransitionAnimator alloc] init];
-  return transitionAnimator;
 }
 
 #pragma mark - PSManagedTableViewController
