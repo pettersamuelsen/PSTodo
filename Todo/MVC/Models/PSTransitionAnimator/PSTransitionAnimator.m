@@ -8,6 +8,7 @@
 
 #import "PSTransitionAnimator.h"
 #import "PSCreateViewController.h"
+#import "PSTransition.h"
 
 @implementation PSTransitionAnimator
 
@@ -16,29 +17,28 @@
 }
 
 - (void)animateTransition:(id <UIViewControllerContextTransitioning>)transitionContext {
-  UIView *inView = [transitionContext containerView];
-  
-  PSCreateViewController *toViewController = (PSCreateViewController *)[transitionContext viewControllerForKey:UITransitionContextToViewControllerKey];
-  PSCreateViewController *fromViewController = (PSCreateViewController *)[transitionContext viewControllerForKey:UITransitionContextFromViewControllerKey];
-  
-  UIView *toView = toViewController.view;
-  UIView *fromView = fromViewController.view;
-  
+  UIView *containerView = [transitionContext containerView];
+  UIView *toView = [transitionContext viewForKey:UITransitionContextToViewKey];
+  UIView *fromView = [transitionContext viewForKey:UITransitionContextFromViewKey];
   NSTimeInterval duration = [self transitionDuration:transitionContext];
   
   if(self.isPresenting){
-    [inView addSubview:toView];
+    [containerView addSubview:toView];
     toView.userInteractionEnabled = YES;
     
-    // Animate in the toView
+    // Animate in the toViewViewController
+    UIViewController<PSTransition> *toViewController = (UIViewController<PSTransition> *)[transitionContext viewControllerForKey:UITransitionContextToViewControllerKey];
+
     [toViewController animateWithDirection:PSAnimationDirectionIn duration:duration completion:^{
       [transitionContext completeTransition:YES];
     }];
   }else{
-    [inView insertSubview:toView belowSubview:fromView];
+    [containerView insertSubview:toView belowSubview:fromView];
     fromView.userInteractionEnabled = NO;
     
-    // Animate out the fromView
+    // Animate out the fromViewController
+    UIViewController<PSTransition> *fromViewController = (UIViewController<PSTransition> *)[transitionContext viewControllerForKey:UITransitionContextFromViewControllerKey];
+
     [fromViewController animateWithDirection:PSAnimationDirectionOut duration:duration completion:^{
       [transitionContext completeTransition:YES];
     }];
