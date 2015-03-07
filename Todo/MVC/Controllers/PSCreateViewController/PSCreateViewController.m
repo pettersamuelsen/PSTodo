@@ -8,8 +8,10 @@
 
 #import "PSCreateViewController.h"
 #import "PSTheme.h"
+#import "PSTransition.h"
+#import "UITextField+Validation.h"
 
-@interface PSCreateViewController () <UITextFieldDelegate>
+@interface PSCreateViewController () <UITextFieldDelegate, PSTransition>
 @property (nonatomic, weak) IBOutlet UIImageView *dimmedBackgroundImageView;
 @property (nonatomic, weak) IBOutlet UIImageView *seperatorImageView;
 @property (nonatomic, weak) IBOutlet UIView *alertContainerView;
@@ -67,7 +69,7 @@
 
 - (void)submitWithTitle:(NSString *)title {
   // Return if the textfield is not valid
-  if(![self isTextFieldValid]){
+  if(![self.titleTextField isValid]){
     return;
   }
   
@@ -152,17 +154,6 @@
 #pragma mark - Helpers
 - (void)dismissView {
   [self dismissViewControllerAnimated:YES completion:nil];
-}
-
-- (BOOL)isTextFieldValid {
-  // Check to see if the title text field is not empty
-  return self.titleTextField.text.length > 0;
-}
-
-- (void)didReceiveMemoryWarning
-{
-  [super didReceiveMemoryWarning];
-  // Dispose of any resources that can be recreated.
 }
 
 @end

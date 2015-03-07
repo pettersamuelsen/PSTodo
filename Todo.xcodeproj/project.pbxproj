@@ -38,6 +38,7 @@
 		DD4218FC1960DB5300EE9059 /* OpenSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DD4218F91960DB5300EE9059 /* OpenSans-Regular.ttf */; };
 		DD4218FD1960DB5300EE9059 /* OpenSans-Semibold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DD4218FA1960DB5300EE9059 /* OpenSans-Semibold.ttf */; };
 		DD4219011960DC8F00EE9059 /* PSMainNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = DD4219001960DC8F00EE9059 /* PSMainNavigationController.m */; };
+		DD7776211AAB322C0045A8BB /* UITextField+Validation.m in Sources */ = {isa = PBXBuildFile; fileRef = DD7776201AAB322C0045A8BB /* UITextField+Validation.m */; };
 		DD80EB92196098EE0057869F /* PSEntryTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DD80EB90196098EE0057869F /* PSEntryTableViewCell.m */; };
 		DD80EB93196098EE0057869F /* PSEntryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DD80EB91196098EE0057869F /* PSEntryTableViewCell.xib */; };
 /* End PBXBuildFile section */
@@ -100,6 +101,9 @@
 		DD4218FA1960DB5300EE9059 /* OpenSans-Semibold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Semibold.ttf"; sourceTree = "<group>"; };
 		DD4218FF1960DC8F00EE9059 /* PSMainNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PSMainNavigationController.h; path = PSMainNavigationController/PSMainNavigationController.h; sourceTree = "<group>"; };
 		DD4219001960DC8F00EE9059 /* PSMainNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PSMainNavigationController.m; path = PSMainNavigationController/PSMainNavigationController.m; sourceTree = "<group>"; };
+		DD77761B1AAB31400045A8BB /* PSTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PSTransition.h; path = PSTransitionAnimator/PSTransition.h; sourceTree = "<group>"; };
+		DD77761F1AAB322C0045A8BB /* UITextField+Validation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UITextField+Validation.h"; path = "UITextField+Validation/UITextField+Validation.h"; sourceTree = "<group>"; };
+		DD7776201AAB322C0045A8BB /* UITextField+Validation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UITextField+Validation.m"; path = "UITextField+Validation/UITextField+Validation.m"; sourceTree = "<group>"; };
 		DD80EB8F196098EE0057869F /* PSEntryTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PSEntryTableViewCell.h; path = Views/PSEntryTableViewCell/PSEntryTableViewCell.h; sourceTree = "<group>"; };
 		DD80EB90196098EE0057869F /* PSEntryTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PSEntryTableViewCell.m; path = Views/PSEntryTableViewCell/PSEntryTableViewCell.m; sourceTree = "<group>"; };
 		DD80EB91196098EE0057869F /* PSEntryTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PSEntryTableViewCell.xib; path = Views/PSEntryTableViewCell/PSEntryTableViewCell.xib; sourceTree = "<group>"; };
@@ -230,6 +234,7 @@
 		540C0B4A195C6D9D009A503D /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				DD77761E1AAB32160045A8BB /* UITextField+Validation */,
 				540C0BAB195CB3CF009A503D /* PSEntry+CoreDataAdditions */,
 			);
 			path = Helpers;
@@ -315,6 +320,7 @@
 		546AD63A1961A9F3009C1254 /* PSTransitionAnimator */ = {
 			isa = PBXGroup;
 			children = (
+				DD77761B1AAB31400045A8BB /* PSTransition.h */,
 				546AD63B1961AA04009C1254 /* PSTransitionAnimator.h */,
 				546AD63C1961AA04009C1254 /* PSTransitionAnimator.m */,
 			);
@@ -382,6 +388,15 @@
 				DD4219001960DC8F00EE9059 /* PSMainNavigationController.m */,
 			);
 			name = PSMainNavigationController;
+			sourceTree = "<group>";
+		};
+		DD77761E1AAB32160045A8BB /* UITextField+Validation */ = {
+			isa = PBXGroup;
+			children = (
+				DD77761F1AAB322C0045A8BB /* UITextField+Validation.h */,
+				DD7776201AAB322C0045A8BB /* UITextField+Validation.m */,
+			);
+			name = "UITextField+Validation";
 			sourceTree = "<group>";
 		};
 		DD80EB8D196098CC0057869F /* Views */ = {
@@ -524,6 +539,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DD7776211AAB322C0045A8BB /* UITextField+Validation.m in Sources */,
 				540C0BB9195CB8C9009A503D /* PSManagedTableViewController.m in Sources */,
 				540C0B1E195C6CDA009A503D /* main.m in Sources */,
 				540C0BA7195CAE24009A503D /* PSEntry.m in Sources */,
