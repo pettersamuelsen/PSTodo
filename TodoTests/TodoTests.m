@@ -6,29 +6,48 @@
 //  Copyright (c) 2014 Petter Samuelsen. All rights reserved.
 //
 
-#import <XCTest/XCTest.h>
+@import XCTest;
+#import "PSCoreDataManager.h"
+#import "PSEntry+CoreDataAdditions.h"
+#import "UITextField+Validation.h"
 
 @interface TodoTests : XCTestCase
-
+@property (nonatomic, strong) UITextField *textField;
 @end
 
 @implementation TodoTests
 
-- (void)setUp
-{
+- (void)setUp {
     [super setUp];
-    // Put setup code here. This method is called before the invocation of each test method in the class.
+    self.textField = [[UITextField alloc] init];
 }
 
-- (void)tearDown
-{
-    // Put teardown code here. This method is called after the invocation of each test method in the class.
+- (void)tearDown {
+    self.textField = nil;
     [super tearDown];
 }
 
-- (void)testExample
-{
-    XCTFail(@"No implementation for \"%s\"", __PRETTY_FUNCTION__);
+- (void)testCreateNewEntry {
+    PSEntry *entry = [PSEntry createWithTitle:@"Foo"];
+    XCTAssertEqual(entry.title, @"Foo", "Title should be `Foo`");
+}
+
+- (void)testToggleCompleted {
+    PSEntry *entry = [PSEntry createWithTitle:@"Foo"];
+    XCTAssertFalse(entry.completed.boolValue, "Completed should be `NO` by default");
+    
+    [entry toggleCompleted];
+    XCTAssertTrue(entry.completed.boolValue, "Completed should be toggled from `NO` to `YES`");
+}
+
+- (void)testTextFieldZeroLength {
+    self.textField.text = nil;
+    XCTAssertFalse([self.textField isValid], "Textfield should no be valid with a zero length");
+}
+
+- (void)testTextFieldValidLength {
+    self.textField.text = @"Foo";
+    XCTAssertTrue([self.textField isValid], "Textfield should have a valid length");
 }
 
 @end
