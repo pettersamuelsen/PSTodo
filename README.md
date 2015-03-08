@@ -1,6 +1,8 @@
 PSTodo
 ======
 
+[![Build Status](https://travis-ci.org/pettersamuelsen/PSTodo.svg?branch=master)](https://travis-ci.org/pettersamuelsen/PSTodo)
+
 A simple todo list iOS application just for fun.
 
 

@@ -1,3 +1,4 @@
 language: objective-c
-xcode_project: Todo.xcodeproj
-xcode_scheme: Todo
+script:
+  - xctool -project Todo.xcodeproj -scheme Todo -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO
+  - xctool test -project Todo.xcodeproj -scheme TodoTests -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO
